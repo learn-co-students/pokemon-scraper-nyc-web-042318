@@ -12,7 +12,7 @@ class Pokemon
 
   end
 
-  def self.save(aname, atype, db)
+  def self.save(aname, atype, db, hp=nil)
 
     db.execute("INSERT INTO pokemon(name,type) VALUES (?,?)",aname, atype)
   end
@@ -21,7 +21,7 @@ class Pokemon
   def self.find(id,db)
     k = db.execute("select * from pokemon where id = ?",id)
     # binding.pry
-    self.new(id:k[0][0],name:k[0][1],type:k[0][2],db:db, hp:60) if !k.empty?
+    self.new(id:k[0][0],name:k[0][1],type:k[0][2],db:db) if !k.empty?
   end
 
 end
