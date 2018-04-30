@@ -29,3 +29,6 @@ class Scraper
   end
 
 end
+
+class BONUS
+end
